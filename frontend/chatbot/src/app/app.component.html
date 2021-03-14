@@ -3,7 +3,26 @@
     <iframe src="https://bcebakhtiyarpur.org/" style="height: 100%; width: 100%;" frameBorder="0" allowfullscreen=true> </iframe>
   </div>
   <div class="chatArea">
-
+    <div class="messages">
+      <h3>BCE Chatbot</h3>
+      <div *ngFor="let msg of messages" class="msg">
+        <div *ngIf="msg.sent" class="ui positive message sentMsg">
+          You:
+            {{msg.value}}
+        </div>
+        <div *ngIf="!msg.sent" class="ui blue message receivedMsg">
+          Bot: {{msg.value}}
+        </div>
+      </div>
+    </div>
+    <div class="inputArea">
+      <form [formGroup]="messageInput" (ngSubmit)="chat()">
+        <div class="sender">
+        <div class="ui input txtInput"> <input formControlName="messageText"> </div>
+        <button class="ui button" type="submit"> Send</button>
+      </div>
+      </form>
+    </div>
   </div>
 </div>
 

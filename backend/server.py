@@ -25,7 +25,7 @@ def evaluateResult():
     try:
       payload = request.json['request']
       print(payload)
-      return jsonify(prepare_output(payload)), 201
+      return jsonify(prepare_output("hi")), 201
 
     except Exception as e:
       print(e)

@@ -1,9 +1,9 @@
 {
-  "./ask": {
-    "target": "https://localhost:5000/ask",
+  "/ask": {
+    "target": "http://localhost:5000/ask",
     "secure": false,
     "logLevel": "debug",
-    "pathRewrite": {"^/v2" : "https://localhost:5000"},
+    "pathRewrite": {"^/ask" : "https://localhost:5000"},
     "changeOrigin": true
   }
 }

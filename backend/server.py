@@ -18,14 +18,17 @@ def prepare_output(a):
 def index():
   return "Chatbot Say Hi!"
 
+@app.route('/ask/', methods=['POST'])
 @app.route('/ask', methods=['POST'])
 def evaluateResult():
   if request.json and 'request' in request.json:
     try:
       payload = request.json['request']
+      print(payload)
       return jsonify(prepare_output(payload)), 201
 
     except Exception as e:
+      print(e)
       return jsonify(error_in_result(e)), 201
 
   return jsonify(error_payload_not_found), 201

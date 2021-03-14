@@ -11,7 +11,7 @@ export class ApiService {
 
 
   constructor(private http: HttpClient) {
-    this.endPoint = "./ask";
+    this.endPoint = "ask";
    }
 
    chat(message: string): Observable<any>{
